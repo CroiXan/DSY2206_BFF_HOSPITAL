@@ -9,9 +9,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import com.duoc.bff.config.FeignBasicAuthConfig;
 import com.duoc.bff.models.Patient;
 
-@FeignClient(name = "patient-service", url = "http://localhost:8080/api/patients")
+@FeignClient(name = "patient-service", url = "http://localhost:8080/api/patients", configuration = FeignBasicAuthConfig.class)
 public interface PatientClient {
 
     @GetMapping
@@ -28,5 +29,5 @@ public interface PatientClient {
 
     @DeleteMapping("/{id}")
     ResponseEntity<String> deletePatient(@PathVariable int id);
-    
+
 }
