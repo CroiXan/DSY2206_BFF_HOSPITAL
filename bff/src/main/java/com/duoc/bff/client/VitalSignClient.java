@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import com.duoc.bff.config.FeignBasicAuthConfig;
 import com.duoc.bff.models.VitalSign;
 
-@FeignClient(name = "vitalsign-service", url = "http://172.31.21.28:8082/api/vitalsign", configuration = FeignBasicAuthConfig.class)
+@FeignClient(name = "vitalsign-service", url = "http://duocapihospital.ddns.net:8082/api/vitalsign", configuration = FeignBasicAuthConfig.class)
 public interface VitalSignClient {
 
     @GetMapping
